@@ -25,6 +25,9 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument("-x", "--exclude", nargs="+", help="File extensions to exclude")
     parser.add_argument("-v", "--verbose", action="store_true", help="Verbose output")
+    parser.add_argument(
+        "-d", "--exclude-dir", nargs="+", help="Directory names to exclude"
+    )
 
     return parser.parse_args()
 
@@ -51,15 +54,24 @@ def get_filename_extension(filename: str) -> str:
 
 def get_files(args: argparse.Namespace) -> list[str]:
     extensions_to_exclude = args.exclude or []
+    directories_to_exclude = args.exclude_dir or []
     files = []
     for dirpath, dirnames, filenames in os.walk(args.path):
+        # Exclude directories by checking if any part of the path is in directories_to_exclude
+        if any(
+            excluded_dir in Path(dirpath).parts
+            for excluded_dir in directories_to_exclude
+        ):
+            continue
         for filename in filenames or []:
             if filename.startswith("."):
                 continue
             if get_filename_extension(filename) not in extensions_to_exclude:
                 files.append(Path(dirpath) / filename)
     if args.verbose:
-        print(f"All files in {args.path} excluding {args.exclude}:")
+        print(
+            f"All files in {args.path} excluding {args.exclude} and directories {args.exclude_dir}:"
+        )
     return files
 
 
