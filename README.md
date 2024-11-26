@@ -1,7 +1,7 @@
 Tool to combine all files in a directory into a single file
 
 ```
-usage: d2f [-h] [-p [PATH]] [-l] [-e] [-x EXCLUDE [EXCLUDE ...]] [-v]
+usage: d2f [-h] [-p [PATH]] [-l] [-e] [-x EXCLUDE [EXCLUDE ...]] [-v] [-d EXCLUDE_DIR [EXCLUDE_DIR ...]]
 
 Tool to combine all files in a directory into a single file
 
@@ -13,5 +13,7 @@ options:
   -e                    List all extensions in the directory
   -x EXCLUDE [EXCLUDE ...], --exclude EXCLUDE [EXCLUDE ...]
                         File extensions to exclude
+  -d EXCLUDE_DIR [EXCLUDE_DIR ...], --exclude-dir EXCLUDE_DIR [EXCLUDE_DIR ...]
+                        Directory names to exclude
   -v, --verbose         Verbose output
 ```
