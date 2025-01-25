@@ -17,3 +17,7 @@ options:
                         Directory names to exclude
   -v, --verbose         Verbose output
 ```
+
+## Similar projects
+
+- [simonw/files-to-prompt: Concatenate a directory full of files into a single prompt for use with LLMs](https://github.com/simonw/files-to-prompt)
