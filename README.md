@@ -21,3 +21,6 @@ options:
 ## Similar projects
 
 - [simonw/files-to-prompt: Concatenate a directory full of files into a single prompt for use with LLMs](https://github.com/simonw/files-to-prompt)
+- [artkulak/repo2file: Dump selected files from your repo into single file to easily use in LLMs (Claude, Openai, etc..)](https://github.com/artkulak/repo2file)
+
+Also search alternatives on libhunt. Hint: replace github.com in URLs with libhunt.com.
