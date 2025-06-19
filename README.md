@@ -1,4 +1,21 @@
+
+# d2f
+
 Tool to combine all files in a directory into a single file
+
+## Installation
+
+You can install this tool directly from GitHub using pipx:
+
+```sh
+pipx install git+https://github.com/dudarev/dir2file.git
+```
+
+Make sure you have [pipx](https://pypa.github.io/pipx/) installed.
+
+## Changelog
+
+See [CHANGELOG.md](CHANGELOG.md) for version history.
 
 ```
 usage: d2f [-h] [-p [PATH]] [-l] [-e] [-x EXCLUDE [EXCLUDE ...]] [-v] [-d EXCLUDE_DIR [EXCLUDE_DIR ...]]

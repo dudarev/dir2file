@@ -1,11 +1,19 @@
+
 [build-system]
 requires = ["setuptools", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "d2f"
-version = "0.0.1"
-dependencies = ["setuptools", "wheel"]
+version = "0.0.2"
+description = "Tool to combine all files in a directory into a single file."
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = []
 
 [project.scripts]
 d2f = "main:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+packages = ["main"]
