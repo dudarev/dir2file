@@ -11,9 +11,10 @@ readme = "README.md"
 requires-python = ">=3.8"
 dependencies = []
 
+
 [project.scripts]
-d2f = "main:main"
+d2f = "d2f.main:main"
 
 [tool.setuptools]
 package-dir = {"" = "src"}
-packages = ["main"]
+packages = ["d2f"]

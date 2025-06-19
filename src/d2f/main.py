@@ -32,13 +32,13 @@ def parse_args() -> argparse.Namespace:
     return parser.parse_args()
 
 
-def list_files(args: argparse.Namespace) -> list[Path]:
+def list_files(args: argparse.Namespace) -> None:
     files = get_files(args)
     for f in files:
         print(f)
 
 
-def list_extensions(args: argparse.Namespace):
+def list_extensions(args: argparse.Namespace) -> None:
     files = get_files(args)
     extensions = set()
     for f in files:
@@ -52,7 +52,7 @@ def get_filename_extension(filename: str) -> str:
     return os.path.splitext(filename)[1].replace(".", "")
 
 
-def get_files(args: argparse.Namespace) -> list[str]:
+def get_files(args: argparse.Namespace) -> list[Path]:
     extensions_to_exclude = args.exclude or []
     directories_to_exclude = args.exclude_dir or []
     files = []
@@ -75,7 +75,7 @@ def get_files(args: argparse.Namespace) -> list[str]:
     return files
 
 
-def combine_files(files: list) -> None:
+def combine_files(files: list[Path]) -> None:
     for file in files:
         print(f"{file}:\n\n")
         print(Path(file).read_text())
